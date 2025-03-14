@@ -2,6 +2,7 @@ import express, { Application, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import {UserRoutes} from './modules/users/user.route';
+import { ProductRoutes } from './products/product.routes';
 
 
 const app = express()
@@ -13,7 +14,7 @@ app.use(cors());
 
 
 // routes
-// app.use('/api/products', ProductRoutes);
+app.use('/api/products', ProductRoutes);
 // app.use('/api/orders', OrderRoutes);
 app.use('/api/users', UserRoutes);
 

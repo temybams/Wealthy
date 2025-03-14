@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 
 
 const findUserByEmail = async (email: string) => {
-    return User.findOne({ email })
+    return User.findOne({ email }).select("-password")
 };
 
 const createUser = async (email: string, password: string, role: string) => {
